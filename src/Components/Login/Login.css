@@ -1,0 +1,8 @@
+#singIn{
+    width: 35%;
+}
+@media only screen and (max-width:767px){
+    #singIn{
+        width: 100%;
+    }
+}

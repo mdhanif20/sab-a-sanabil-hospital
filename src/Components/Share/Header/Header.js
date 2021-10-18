@@ -6,8 +6,10 @@ import { AiFillFacebook,AiFillTwitterSquare , AiFillLinkedin } from "react-icons
 import logo from "../../../images/logo/logo.png"
 import "./Header.css";
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
+    const {users,logOut} = useAuth();
     return (
         <div>
             <div>
@@ -18,7 +20,11 @@ const Header = () => {
                                 < span> +8801609015767</span> 
                         </Navbar.Brand>
                         <Nav className="ms-auto"  >
-                            <Nav.Link href="#home" id="header-login" className="py-0 px-2 fs-5 my-1">Login</Nav.Link>
+                            {
+                                users.email? <button onClick={logOut} className="border-0 bg-light fw-bolder">Log Out</button>
+                                :
+                                <Nav.Link as={Link} to="/login" id="header-login" className="py-0 px-2 fs-5 my-1">Login</Nav.Link>
+                            }
                             
                             <Nav.Link href="#features" id="header-icon"   className="fs-3 px-2 p-0 bg-black border-end text-white ms-4"> <HiOutlineMail/> </Nav.Link>
                             <Nav.Link href="#features" className="py-0 px-2 fs-3 text-white bg-black border-end"> <AiFillFacebook/> </Nav.Link>
@@ -38,7 +44,11 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link as={Link} to="/home" className="fw-bolder">Home</Nav.Link>
-                        <Nav.Link href="#link">Link</Nav.Link>
+                        {
+                            users.email? <button onClick={logOut} className="border-0 bg-light fw-bolder">Log Out</button>:
+                            <Nav.Link className="fw-bolder" as={Link} to="/login">Login</Nav.Link>
+                        }
+                       
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
