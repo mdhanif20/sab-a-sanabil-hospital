@@ -42,11 +42,11 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link as={Link} to="/home" className="fw-bolder">Home</Nav.Link>
+                    <Nav className="ms-auto ">
+                        <Nav.Link as={Link} to="/home" className="fw-bolder text-start">Home</Nav.Link>
                         {
-                            users.email? <button onClick={logOut} className="border-0 bg-light fw-bolder">Log Out</button>:
-                            <Nav.Link className="fw-bolder" as={Link} to="/login">Login</Nav.Link>
+                            users.email? <button onClick={logOut} className="border-0 bg-light ps-0 fw-bolder text-start">Log Out</button>:
+                            <Nav.Link className="fw-bolder ps-0" as={Link} to="/login text-start">Login</Nav.Link>
                         }
                        
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
