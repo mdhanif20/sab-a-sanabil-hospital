@@ -8,11 +8,15 @@ import Home from './Components/Home/Home/Home';
 import Header from './Components/Share/Header/Header';
 import AuthProvider from './Contexts/AuthProvider';
 import Login from './Components/Login/Login';
+import ServiceDetails from './Components/Details/ServiceDetails';
+import NotFound from './Components/NotFound/NotFound';
+import Footer from './Components/Share/Footer/Footer';
+import ContactUs from './Components/Contactus/ContactUs';
+import AboutUs from './Components/AboutUs/AboutUs';
+import OurServices from './Components/OurServices/OurServices';
 
 
 
-
-// https://app.netlify.com/teams/mdhanif20/overview
 function App() {
   return (
     <AuthProvider>
@@ -28,7 +32,23 @@ function App() {
          <Route path="/login">
            <Login></Login>
          </Route>
+         <Route path="/details/:serviceId">
+           <ServiceDetails></ServiceDetails>
+         </Route>
+         <Route path="/about">
+           <AboutUs></AboutUs>
+         </Route>
+         <Route path="/services">
+           <OurServices></OurServices>
+         </Route>
+         <Route path="/contact">
+           <ContactUs></ContactUs>
+         </Route>
+         <Route path="*">
+          <NotFound></NotFound>
+         </Route>
        </Switch>
+       <Footer></Footer>
      </Router> 
     </AuthProvider>
   );

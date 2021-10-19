@@ -11,11 +11,16 @@ button.active {
     display: none;
 }
 div#banner-text {
-    color: #02534e;
+    color: #024350;
 }
-
+#extra-text{
+    display: block;
+}
 @media only screen and (max-width:767px){
     img#banner-img {
         height: 50vh;
+    }
+    #extra-text{
+        display: none;
     }
 }
