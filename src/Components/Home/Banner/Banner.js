@@ -18,7 +18,7 @@ const Banner = () => {
                             <div id="banner-text" className="col-md-8 col-12 text-md-start">
                                 <h3>Sab'a Sanabill Hospital</h3>
                                 <p>A hospital is a health care institution providing patient treatment with specialized medical and nursing staff and medical equipment.</p>
-                                <button type="button" className="btn btn-primary fs-6">Take Service</button>
+                                <button type="button" className="btn btn-primary fs-6 fw-bolder">Take Service</button>
                             </div>
                         </div>
                     </Carousel.Caption>
